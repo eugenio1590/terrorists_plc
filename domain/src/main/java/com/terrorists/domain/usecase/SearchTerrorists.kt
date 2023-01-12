@@ -7,7 +7,7 @@ class SearchTerrorists(
     private val terroristsRepository: TerroristsRepository
 ) : UseCase<SearchTerrorists.Request, SearchTerrorists.Callback> {
 
-    override suspend fun invoke(params: Request, callback: Callback) {
+    override suspend operator fun invoke(params: Request, callback: Callback) {
         val terrorists = terroristsRepository.get(params.keyword)
         callback.load(terrorists)
     }
