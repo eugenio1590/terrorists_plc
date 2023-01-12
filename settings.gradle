@@ -16,3 +16,4 @@ rootProject.name = "Terrorists PLC"
 include ':app'
 include ':model'
 include ':domain'
+include ':data'
