@@ -7,7 +7,9 @@ class TerroristMapper {
     fun toModel(dto: TerroristDto): Terrorist {
         return Terrorist(
             firstName = dto.firstName ?: "",
-            lastName = dto.lastName ?: ""
+            lastName = dto.lastName ?: "",
+            dateOfBirth = dto.dateOfBirthList?.firstOrNull()?.date ?: "",
+            placeOfBirth = dto.placeOfBirthList?.firstOrNull()?.place ?: "",
         )
     }
 }

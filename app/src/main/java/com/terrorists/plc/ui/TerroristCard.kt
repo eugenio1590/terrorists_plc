@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -34,24 +35,35 @@ fun TerroristCard(terrorist: Terrorist) {
     ) {
 
         Row(modifier = Modifier.padding(20.dp)) {
-            Column(modifier = Modifier.weight(1f),
-                Arrangement.Center) {
+            Column(
+                modifier = Modifier.weight(1f),
+                verticalArrangement = Arrangement.Center,
+            ) {
                 Text(
                     text = terrorist.name,
                     style = TextStyle(
                         color = Color.Black,
-                        fontSize = 22.sp,
+                        fontSize = 16.sp,
                         fontWeight = FontWeight.Bold,
                     )
                 )
-                Text(
-                    text = "Age :- ",//+emp.age.toString(),
-                    style = TextStyle(
-                        color = Color.Black,
-                        fontSize = 15.sp
+                Row {
+                    Text(
+                        text = "${terrorist.placeOfBirth} - ",
+                        style = TextStyle(
+                            color = Color.Black,
+                            fontSize = 12.sp
+                        )
                     )
-                )
-
+                    Text(
+                        text = terrorist.dateOfBirth,
+                        style = TextStyle(
+                            color = Color.Black,
+                            fontSize = 12.sp,
+                            fontStyle = FontStyle.Italic
+                        )
+                    )
+                }
             }
         }
     }
@@ -64,7 +76,9 @@ fun TerroristCardDefaultPreview() {
         TerroristCard(
             terrorist = Terrorist(
                 firstName = "First Name",
-                lastName = "Last Name"
+                lastName = "Last Name",
+                dateOfBirth = "1950",
+                placeOfBirth = "Madrid",
             )
         )
     }

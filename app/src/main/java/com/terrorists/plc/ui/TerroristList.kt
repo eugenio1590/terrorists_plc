@@ -26,11 +26,15 @@ fun TerroristListDefaultPreview() {
             terrorists = listOf(
                 Terrorist(
                     firstName = "First",
-                    lastName = ""
+                    lastName = "",
+                    dateOfBirth = "1950",
+                    placeOfBirth = "place",
                 ),
                 Terrorist(
                     firstName = "Second",
-                    lastName = ""
+                    lastName = "",
+                    dateOfBirth = "1950",
+                    placeOfBirth = "place",
                 )
             )
         )
